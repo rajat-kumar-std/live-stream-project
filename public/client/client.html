@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../assets/favicon.ico" />
+        <!-- for stream -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <!-- for chat -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="../client/client.css" />
+        <title>Client Page</title>
+    </head>
+    <body>
+        <!-- header section -->
+        <div class="header">
+            <h1 style="text-align: center">Client Page</h1>
+        </div>
+
+        <!-- Stream Video Section -->
+        <div class="stream-container">
+            <video autoplay id="stream-video"></video>
+            <button class="btn" id="view-stream-button">View Stream</button>
+
+            <!-- Chat Section -->
+            <div class="chat-container">
+                <div id="message-box">
+                    <div id="message-container"></div>
+                    <div id="feedback"></div>
+                </div>
+
+                <div class="chat-controls">
+                    <input
+                        id="chat-box"
+                        type="message"
+                        placeholder="Type your message..."
+                    />
+                    <button id="send-chat-button" class="btn">Send</button>
+                </div>
+            </div>
+            <div class="footer"></div>
+        </div>
+
+        <!-- client stream handler -->
+        <script src="./stream.js"></script>
+        <!-- client side chat handler script -->
+        <script src="./clientChatHandler.js"></script>
+    </body>
+</html>

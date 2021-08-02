@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../assets/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="../host/host.css" />
+        <title>Host Page</title>
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <!-- for chat -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1 style="text-align: center">Host Page</h1>
+
+        <video autoplay id="webcam-video"></video>
+        <video autoplay playinline id="screen-video"></video>
+        <br />
+        <span id="shareErrorMsg"></span>
+
+        <div>
+            <button id="start-stream-button" class="btn">Start Stream</button>
+            <button id="stop-stream-button" class="btn">Stop Stream</button
+            ><br />
+
+            <button id="unmute-audio-button" class="btn">Unmute</button>
+            <button id="mute-audio-button" class="btn">Mute</button><br />
+
+            <button id="start-video-button" class="btn">Start Video</button>
+            <button id="stop-video-button" class="btn">Stop Video</button><br />
+
+            <button id="start-share-button" class="btn">Start Sharing</button>
+            <button id="stop-share-button" class="btn">Stop Sharing</button
+            ><br />
+
+            <button id="start-rec-button" class="btn">Start Recording</button>
+            <button id="pause-rec-button" class="btn">Pause</button>
+            <button id="resume-rec-button" class="btn">Resume</button>
+            <button id="stop-rec-button" class="btn">Stop Recording</button>
+
+            <a class="btn" id="download-rec-button" download
+                >Download Recording</a
+            >
+        </div>
+
+        <!-- chat section start -->
+        <div class="chat-container">
+            <div id="message-box">
+                <div id="message-container"></div>
+                <div id="feedback"></div>
+            </div>
+            <div class="chat-controls">
+                <input
+                    id="chat-box"
+                    type="message"
+                    placeholder="Type your message..."
+                />
+                <button id="send-chat-button" class="btn">Send</button>
+            </div>
+        </div>
+
+        <!--stream merger library -->
+        <script src="./video-stream-merger.js"></script>
+        <!-- stream handler script -->
+        <script src="./hostStreamHandler.js"></script>
+        <!-- chat handler script file -->
+        <script src="./hostChatHandler.js"></script>
+    </body>
+</html>
